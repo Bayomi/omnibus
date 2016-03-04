@@ -36,10 +36,6 @@
     "dataSource": "MONGAO",
     "public": true
   },
-  "Logs": {
-    "dataSource": "MONGAO",
-    "public": true
-  },
   "Log": {
     "dataSource": "MONGAO",
     "public": true
