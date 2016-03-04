@@ -1,0 +1,28 @@
+{
+  "name": "Stop",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "coordinates": {
+      "type": "geopoint",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "logs": {
+      "type": "hasMany",
+      "model": "Log",
+      "foreignKey": "stopId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
