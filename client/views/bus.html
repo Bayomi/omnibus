@@ -1,0 +1,31 @@
+<div class="col-sm-6">
+	<h3>New Stop</h3>
+	<form name="stopForm" novalidate ng-submit="addStop()">
+		<input type="text" class="form-control" placeholder="Stop name" autocomplete="off" required ng-model="newStop.name">
+		<br/>
+		<button class="btn btn-primary">Create</button>
+	</form>
+	<hr>
+	<h3>Stop List</h3>
+	<ul>
+		<li ng-repeat="stop in stops">{{stop.name}} - {{stop.id}}</li>
+	</ul>
+</div>
+
+<div class="col-sm-6">
+	<h3>New Log</h3>
+	<form name="logForm" novalidate ng-submit="addLog()">
+		<input type="text" class="form-control" placeholder="Diff (int)" autocomplete="off" required ng-model="newLog.diff">
+		<input type="text" class="form-control" placeholder="FK (stopId)" autocomplete="off" required ng-model="newLog.stopId">
+		<div class="checkbox">
+			<label><input type="checkbox" checked ng-model="newLog.isLate"> isLate?</label>
+		</div>
+		<br/>
+		<button class="btn btn-primary">Create</button>
+	</form>
+	<hr>
+	<h3>Log List</h3>
+	<ul>
+		<li ng-repeat="log in logs">{{log.diff}}</li>
+	</ul>
+</div>
