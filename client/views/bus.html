@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div class="form-container">
 <!-- 	<div class="col-sm-6">
 		<h3>New Stop</h3>
 		<form name="stopForm" novalidate ng-submit="addStop()">
@@ -13,25 +13,59 @@
 		</ul>
 	</div>
  -->
-	<div class="col-sm-6">
-		<h3>New Log</h3>
-		<form name="logForm" novalidate ng-submit="addLog()">
-			<input type="text" class="form-control" placeholder="Diff (int)" autocomplete="off" required ng-model="newLog.diff">
-<!-- 			<input type="text" class="form-control" placeholder="FK (stopId)" autocomplete="off" required ng-model="newLog.stopId"> -->
-			<select ng-options="stop.id as stop.name for stop in stops" required ng-model="newLog.stopID">
-				<option value="">Selecione a parada em que está</option>
-			</select>
-
+	<form name="logForm" novalidate ng-submit="addLog()">
+ 	<select class="form-control select-styling" ng-options="stop.id as stop.name for stop in stops" required ng-model="newLog.stopID">
+		<option value="">Selecione a parada em que está</option>
+	</select>
+	<div class="question">O 110 está...</div>
+	<select class="form-control" id="status110">
+		<option value="Atrasado" checked ng-model="newLog.isLate" id="Atrasado">Atrasado</option>
+		<option value="Normal" id="Normal">Normal</option>
+		<option value="Adiantado" id="Adiantado">Adiantado</option>
+	</select>
+	<div class="question">Quantos minutos?</div>
+		<input type="text" class="form-control" placeholder="e.g 2" autocomplete="off" required ng-model="newLog.diff"> 
+		
+			
+<!-- 
 			<div class="checkbox">
 				<label><input type="checkbox" checked ng-model="newLog.isLate"> isLate?</label>
-			</div>
+			</div> -->
 			<br/>
-			<button class="btn btn-primary">Create</button>
+			<button class="form-control btn btn-primary">Create</button>
 		</form>
-		<hr>
+<!-- 		<hr>
 		<h3>Log List</h3>
 		<ul>
 			<li ng-repeat="log in logs">{{log.diff}}</li>
-		</ul>
-	</div>
+		</ul> -->
 </div>
+
+	<!-- FORMS PARA A QUANTIDADE DE ATRASO -->
+<!-- 	<select class="Atrasado" required ng-model="newLog.diff" style="display: none">
+			<div class="question"> Quanto tempo? </div>
+			<option value="1">1 min</option>
+			<option value="2">2 min</option>
+			<option value="3">3 min</option>
+			<option value="4">4 min</option>
+			<option value="5">5 min ou mais</option>
+	</select>
+	<select class="Adiantado" required ng-model="newLog.diff" style="display: none">
+			<div class="question"> Quanto tempo? </div>
+			<option value="1">1 min</option>
+			<option value="2">2 min</option>
+			<option value="3">3 min</option>
+			<option value="4">4 min</option>
+			<option value="5">5 min ou mais</option>
+	</select>
+	<select class="Normal" required ng-model="newLog.diff">
+		<option value="0"></option>
+	</select> -->
+	<!-- FIM DOS FORMS PARA QUANTIDADE DE ATRASO --> 
+<script>
+// $("#status110").change(function() {
+// 	var selectedOption = $("#status110 option:selected").text();
+// 	console.log(selectedOption);
+// 	$('.'+selectedOption).toggle();
+// });
+// </script>
