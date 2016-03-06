@@ -1,6 +1,10 @@
 body {
   padding-top:0px;
 }
+.slick-slider{
+	background-color: #FFF;
+	margin:30px auto 50px;
+}
 .container{
 	background-color: #FFF;
 }

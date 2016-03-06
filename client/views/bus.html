@@ -3,20 +3,31 @@
  		<select class="form-control select-styling" ng-options="stop.id as stop.name for stop in stops" required ng-model="newLog.stopID">
 			<option value="">Selecione a parada em que está</option>
 		</select>		
-		<div class="question">O 110 está...</div>			
-		<select class="form-control" id="status110">
+		<div class="question">O 110 está...</div>	
+
+		<!-- SLICK -->
+		<div class="slick-slider">
+			<div checked ng-model="newLog.isLate"><h3>Atrasado</h3></div>
+			<div checked ng-model="!newLog.isLate"><h3>Normal</h3></div>
+			<div checked ng-model="!newLog.isLate"><h3>Adiantado</h3></div>
+		</div>				
+		<!-- FIM SLICK -->
+
+
+<!-- 		<select class="form-control" id="status110">
 			<option value="Atrasado" checked ng-model="newLog.isLate" id="Atrasado">Atrasado</option>
 			<option value="Normal" checked ng-model="newLog.isNormal" id="Normal" >Normal</option>
 			<option value="Adiantado" checked ng-model="newLog.isInAdvance" id="Adiantado">Adiantado</option>
-		</select>		
-		<div class="question">Quantos minutos?</div>		
-		<input type="text" class="form-control" placeholder="e.g 2" autocomplete="off" required ng-model="newLog.diff"> 	
+		</select>	 -->	
+		<div class="question">Quantos minutos?</div>
+		<input type="text" class="form-control" placeholder="e.g 2" autocomplete="off" required ng-model="newLog.diff" ng-disabled="newLog.isNormal"> 	
 		<br/>
 		<button class="form-control btn btn-primary" id="submitButton">Create</button>
 	</form>
 </div>
 <script>
 $(document).ready(function(){
+	$('.slick-slider').slick();
     $('#submitButton').click(function(){
         alert("Obrigado por colaborar!");
     });
