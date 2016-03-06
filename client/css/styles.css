@@ -15,7 +15,7 @@ body {
 .form-container{
 	margin-right: auto;
 	margin-left: auto;
-	margin: 8%;
+	margin: 4%;
 }
 .form-control{
 	font-family: 'Lato', sans-serif;
@@ -30,6 +30,7 @@ body {
 	background-color: #5eb9e0;
 	border-color: #5eb9e0;
 }
+
 /*.navbar-header{
 	background-color: white;
 	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
@@ -50,7 +51,7 @@ body {
 	text-align: center;
 	font-family: 'Lobster', cursive;
 	font-size: 18px;
-	border-top: 1%;
+	border-top: 0%;
 	color: #75D5FF;
 }
 /*.navbar-fixed-top {

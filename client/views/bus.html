@@ -1,4 +1,29 @@
 <div class="form-container">
+	<form name="logForm" novalidate ng-submit="addLog()">
+ 		<select class="form-control select-styling" ng-options="stop.id as stop.name for stop in stops" required ng-model="newLog.stopID">
+			<option value="">Selecione a parada em que está</option>
+		</select>		
+		<div class="question">O 110 está...</div>			
+		<select class="form-control" id="status110">
+			<option value="Atrasado" checked ng-model="newLog.isLate" id="Atrasado">Atrasado</option>
+			<option value="Normal" checked ng-model="newLog.isNormal" id="Normal" >Normal</option>
+			<option value="Adiantado" checked ng-model="newLog.isInAdvance" id="Adiantado">Adiantado</option>
+		</select>		
+		<div class="question">Quantos minutos?</div>		
+		<input type="text" class="form-control" placeholder="e.g 2" autocomplete="off" required ng-model="newLog.diff"> 	
+		<br/>
+		<button class="form-control btn btn-primary" id="submitButton">Create</button>
+		</form>
+</div>
+<script>
+$(document).ready(function(){
+    $('#submitButton').click(function(){
+        alert("Obrigado por colaborar!");
+    });
+});
+</script>
+
+<!-- TODO O CÓDIGO COMENTADO ESTÁ AQUI EMBAIXO PARA REFERÊNCIA: -->
 <!-- 	<div class="col-sm-6">
 		<h3>New Stop</h3>
 		<form name="stopForm" novalidate ng-submit="addStop()">
@@ -13,33 +38,17 @@
 		</ul>
 	</div>
  -->
-	<form name="logForm" novalidate ng-submit="addLog()">
- 	<select class="form-control select-styling" ng-options="stop.id as stop.name for stop in stops" required ng-model="newLog.stopID">
-		<option value="">Selecione a parada em que está</option>
-	</select>
-	<div class="question">O 110 está...</div>
-	<select class="form-control" id="status110">
-		<option value="Atrasado" checked ng-model="newLog.isLate" id="Atrasado">Atrasado</option>
-		<option value="Normal" id="Normal">Normal</option>
-		<option value="Adiantado" id="Adiantado">Adiantado</option>
-	</select>
-	<div class="question">Quantos minutos?</div>
-		<input type="text" class="form-control" placeholder="e.g 2" autocomplete="off" required ng-model="newLog.diff"> 
-		
-			
+
 <!-- 
 			<div class="checkbox">
 				<label><input type="checkbox" checked ng-model="newLog.isLate"> isLate?</label>
 			</div> -->
-			<br/>
-			<button class="form-control btn btn-primary">Create</button>
-		</form>
+
 <!-- 		<hr>
 		<h3>Log List</h3>
 		<ul>
 			<li ng-repeat="log in logs">{{log.diff}}</li>
 		</ul> -->
-</div>
 
 	<!-- FORMS PARA A QUANTIDADE DE ATRASO -->
 <!-- 	<select class="Atrasado" required ng-model="newLog.diff" style="display: none">
@@ -62,6 +71,7 @@
 		<option value="0"></option>
 	</select> -->
 	<!-- FIM DOS FORMS PARA QUANTIDADE DE ATRASO --> 
+
 <script>
 // $("#status110").change(function() {
 // 	var selectedOption = $("#status110 option:selected").text();
