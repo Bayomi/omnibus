@@ -1,3 +1,22 @@
 module.exports = function(Log) {
-
+	Log.disableRemoteMethod("create", true);
+	Log.disableRemoteMethod("upsert", true);
+	Log.disableRemoteMethod("updateAll", true);
+	Log.disableRemoteMethod("updateAttributes", false);
+	Log.disableRemoteMethod("find", true);
+	Log.disableRemoteMethod("findById", true);
+	Log.disableRemoteMethod("findOne", true);
+	Log.disableRemoteMethod("deleteById", true);
+	Log.disableRemoteMethod("confirm", true);
+	Log.disableRemoteMethod("count", true);
+	Log.disableRemoteMethod("exists", true);
+	Log.disableRemoteMethod("resetPassword", true);
+	Log.disableRemoteMethod('__count__accessTokens', false);
+	Log.disableRemoteMethod('__create__accessTokens', false);
+	Log.disableRemoteMethod('__delete__accessTokens', false);
+	Log.disableRemoteMethod('__destroyById__accessTokens', false);
+	Log.disableRemoteMethod('__findById__accessTokens', false);
+	Log.disableRemoteMethod('__get__accessTokens', false);
+	Log.disableRemoteMethod('__updateById__accessTokens', false);
+	Log.disableRemoteMethod('createChangeStream', true);
 };
