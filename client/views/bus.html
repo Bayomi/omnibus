@@ -1,21 +1,36 @@
 <div class="form-container">
 	<form name="logForm" novalidate ng-submit="addLog()">
- 		<select class="form-control select-styling" ng-options="stop.id as stop.name for stop in stops" required ng-model="newLog.stopID">
+ 		<select class="form-control select-styling" ng-options="stop.id as stop.name for stop in stops" required ng-model="newLog.stopId" ng-change="update(newLog.stopId)">
 			<option value="">Selecione a parada em que está</option>
-		</select>		
-		<div class="question">O 110 está...</div>			
+		</select>
+
+		<br>
+		<table>
+		  <tr ng-repeat="td in tableString">
+		    <td>{{td}}</td>
+		  </tr>
+		</table>
+
+		<!--<div class="question">O 110 está...</div>			
 		<select class="form-control" id="status110">
 			<option value="Atrasado" checked ng-model="newLog.isLate" id="Atrasado">Atrasado</option>
 			<option value="Normal" checked ng-model="newLog.isNormal" id="Normal" >Normal</option>
 			<option value="Adiantado" checked ng-model="newLog.isInAdvance" id="Adiantado">Adiantado</option>
-		</select>		
-		<div class="question">Quantos minutos?</div>		
-		<input type="text" class="form-control" placeholder="e.g 2" autocomplete="off" required ng-model="newLog.diff"> 	
+		</select>-->
+
+		<div class="question">Que horas você chegou na parada?</div>		
+		<div class="input-group text-center">
+			<div class="input-group-addon"><i class="glyphicon glyphicon-minus" ng-click="minusOne()" id="subDiff"></i></div>
+			<input type="number" min="0" max="10" class="form-control" ng-model="diff" id="diffValue">
+			<div class="input-group-addon"><i class="glyphicon glyphicon-plus" ng-click="plusOne()" id="addDiff"></i></div>
+		</div>
 		<br/>
-		<button class="form-control btn btn-primary" id="submitButton">Create</button>
+		<button class="form-control btn btn-primary" id="submitButton">Atrasado...</button>
+		<button class="form-control btn btn-primary" id="submitButton">Chegou!</button>
 	</form>
 </div>
 <script>
+
 $(document).ready(function(){
     $('#submitButton').click(function(){
         alert("Obrigado por colaborar!");

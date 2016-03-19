@@ -4,12 +4,7 @@
     "connector": "memory"
   },
   "MONGAO": {
-    "host": "ds019668.mlab.com",
-    "port": 19668,
-    "database": "omnibus",
-    "username": "admin",
-    "password": "admin",
     "name": "MONGAO",
-    "connector": "mongodb"
+    "connector": "memory"
   }
 }

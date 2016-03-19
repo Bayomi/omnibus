@@ -14,14 +14,6 @@
       "type": "number",
       "required": true
     },
-    "isNormal":{
-      "type": "boolean",
-      "required": false
-    },
-    "isInAdvance":{
-      "type": "boolean",
-      "required": false
-    },
     "isLate": {
       "type": "boolean",
       "required": false
